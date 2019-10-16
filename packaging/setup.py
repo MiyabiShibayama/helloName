@@ -14,8 +14,6 @@ setup(
     description='print hello [name]',
     long_description='readme',
     author='Miyabi',
-    license=lisence,
-    packages=find_package(exclude=('tests', 'docs')),
     install_requires=read_requirements(),
     )
 
