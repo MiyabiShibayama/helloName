@@ -9,11 +9,6 @@ def read_requirements():
     return requirements
 
 setup(
-    name='helloName',
-    version='0.0.1',
-    description='print hello [name]',
-    long_description='readme',
-    author='Miyabi',
     install_requires=read_requirements(),
     )
 
