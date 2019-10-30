@@ -1,4 +1,4 @@
-#packaging
+# packaging
 - clickコマンドを使ったパッケージングの練習
 [必要なモジュールについて(requirements.txt Pipfile Pipfile.lockの必要性)]
 - 利用者はこのリポジトリをクローンしたらpipenvまたはvenv環境内で利用することが可能である

@@ -24,11 +24,8 @@ build-env:
 	@${MAKE} -s ${VENV}
 	@${MAKE} -s secrets
 
-${VENV}: requirements.txt
-	${PYTHON3} -m venv ${VENV}
-	${ACTIVATE} && pip install --upgrade pip setuptools wheel
-	${ACTIVATE} && pip install --upgrade -r requirements.txt
-	touch ${VENV}
+${VENV}: 
+	pipenv install -d
 
 .PHONY: clean
 clean:
