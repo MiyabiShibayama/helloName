@@ -1,5 +1,5 @@
 PYTHON3		= python3
-VENV		= venv
+VENV		= .venv
 ACTIVATE	= . ./${VENV}/bin/activate
 TARGET		= testpypi
 
@@ -27,30 +27,12 @@ build-env:
 ${VENV}: requirements.txt
 	${PYTHON3} -m venv ${VENV}
 	${ACTIVATE} && pip install --upgrade pip setuptools wheel
-	${ACTIVATE} && pip install --upgrade -r requirements.txt -r dev-requirements.txt
+	${ACTIVATE} && pip install --upgrade -r requirements.txt
 	touch ${VENV}
-
-secrets:
-	echo "username" > secrets
-	echo "password" >> secrets
-
-.PHONY: doc
-doc:
-	${ACTIVATE} && sphinx-apidoc -f -o docs_build/ pyfortune/
-	${ACTIVATE} && cd docs_build/ && make html
-	cp -rfv docs_build/_build/html/* docs/
-
-.PHONY: test
-test: ${VENV}
-	${ACTIVATE} && python -m pytest tests -m "not slow"
-
-.PHONY: test_all
-test_all: ${VENV}
-	${ACTIVATE} && python -m pytest tests
 
 .PHONY: clean
 clean:
-	rm -rf ${VENV} dist build
+	rm -rf dist build *egg-info
 
 .PHONY: build
 build: ${VENV}

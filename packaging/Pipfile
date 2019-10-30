@@ -4,13 +4,10 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+wheel = "*"
 
 [packages]
 click = "*"
-helloname-0-0-1-py3-none-any-whl = "*"
-setup-py = "*"
-bdist-wheel = "*"
-helloname = {path = "./dist/helloName-0.0.1-py3-none-any.whl"}
 twine = "*"
 
 [requires]
